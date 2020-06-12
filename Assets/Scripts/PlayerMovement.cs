@@ -5,23 +5,25 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
-    public float runspeed = 40f;
-    float horizontalMove = 0f;
-    float verticalMove = 0f;
+    //public CharacterController controller;
+    public Rigidbody2D rb;
+    public float movespeed = 5f;
+    Vector2 movement;
+    
 
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runspeed;
-        verticalMove = Input.GetAxisRaw("Vertical") * runspeed;
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-        //Move character
-        controller.Move(horizontalMove * Time.fixedDeltaTime, verticalMove * Time.fixedDeltaTime);
+        
     }
 
-    //void FixedUpdate()
-    //{
-       // controller.Move(verticalMove * Time.fixedDeltaTime, false, false);
-    //}
+    void FixedUpdate()
+    {
+        //Move character
+        //controller.Move(movement.x * movespeed * Time.fixedDeltaTime, movement.y * movespeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * movespeed * Time.fixedDeltaTime);
+    }
 }

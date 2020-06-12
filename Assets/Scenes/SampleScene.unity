@@ -1553,7 +1553,6 @@ GameObject:
   - component: {fileID: 1877503971}
   - component: {fileID: 1877503974}
   - component: {fileID: 1877503973}
-  - component: {fileID: 1877503976}
   - component: {fileID: 1877503975}
   m_Layer: 0
   m_Name: New Sprite
@@ -1684,24 +1683,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1877503970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0759539df9568478dba053640a3d1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MovementSmoothing: 0.05
---- !u!114 &1877503976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877503970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50872440ab38dba489eb55a00c835603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1877503975}
-  runspeed: 40
+  rb: {fileID: 1877503974}
+  movespeed: 5
 --- !u!1 &2068240950
 GameObject:
   m_ObjectHideFlags: 0
