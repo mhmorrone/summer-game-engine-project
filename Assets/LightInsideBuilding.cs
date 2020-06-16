@@ -28,8 +28,13 @@ namespace UnityEngine.Experimental.Rendering.Universal
             {
                 light.intensity = 0f;
             }
+        }
+
+        public void turnLightOn()
+        {
+            lightOn = true;
+        }
     }
-}
 }
 
 
