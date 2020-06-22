@@ -18,10 +18,6 @@ public class Hunger : MonoBehaviour
     void FixedUpdate()
     {
         currentHunger -= StarvationSpeed * Time.fixedDeltaTime;
-        if (currentHunger == 0)
-        {
-            currentHealth -= 0.1f;
-        }
     }
 
     public void Eat(int foodVal)
