@@ -7,6 +7,7 @@ public class Hunger : MonoBehaviour
 {
     public double maxHunger = 100f;
     public double currentHunger;
+    public Health health;
     public double StarvationSpeed = 0.01f;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class Hunger : MonoBehaviour
         currentHunger -= StarvationSpeed * Time.fixedDeltaTime;
         if (currentHunger == 0)
         {
-            currentHealth -= 0.1f;
+            health.currentHealth -= 0.1f * Time.fixedDeltaTime;
         }
     }
 
