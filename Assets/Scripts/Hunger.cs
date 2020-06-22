@@ -15,9 +15,9 @@ public class Hunger : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        currentHunger -= StarvationSpeed;
+        currentHunger -= StarvationSpeed * Time.fixedDeltaTime;
         if (currentHunger == 0)
         {
             currentHealth -= 0.1f;
