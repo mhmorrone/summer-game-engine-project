@@ -6,7 +6,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public double maxHealth = 100f;
-    double currentHealth;
+    public double currentHealth;
     public double recoverySpeed = 0.05f;
     public double damageResistance = 1f;
     
@@ -35,5 +35,10 @@ public class Health : MonoBehaviour
         {
             //Kill character
         }
+    }
+
+    public void Heal(int heal)
+    {
+        currentHealth += heal;
     }
 }
