@@ -19,8 +19,8 @@ TagManager:
   - 
   - Buildings
   - Level 1
-  - 
-  - 
+  - Object
+  - Player
   - 
   - 
   - 
@@ -53,4 +53,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3457860921
+    locked: 0
+  - name: Object
+    uniqueID: 4000209035
     locked: 0
