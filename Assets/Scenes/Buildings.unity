@@ -554,10 +554,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2870585560741702507, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: lightOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870585560741702507, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3705259061728780773, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
       propertyPath: m_BlendStyleIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705259061728780773, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}

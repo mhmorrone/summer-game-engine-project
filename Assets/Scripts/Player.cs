@@ -17,9 +17,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerHunger.currentHunger() == 0)
+        if (playerHunger.currentHunger == 0)
         {
-            playerHealth.currentHealth() -= 0.1f;
+            playerHealth.currentHealth -= 0.1f * Time.fixedDeltaTime;
         }
     }
 }

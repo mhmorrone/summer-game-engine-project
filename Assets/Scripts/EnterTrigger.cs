@@ -12,6 +12,7 @@ namespace UnityEngine.Experimental.Rendering.Universal
         void OnTriggerEnter ()
         {
             light.turnLightOn();
+            Debug.Log("Turn light on");
         }
     }
 }
