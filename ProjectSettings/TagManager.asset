@@ -8,6 +8,8 @@ TagManager:
   - unpause
   - Open
   - Close
+  - Level1
+  - Level2
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Level 1
   - Object
   - Player
-  - 
+  - Level 2
   - 
   - 
   - 
@@ -50,6 +52,9 @@ TagManager:
     locked: 0
   - name: Level 1
     uniqueID: 1241937011
+    locked: 0
+  - name: Level 2
+    uniqueID: 1640160129
     locked: 0
   - name: Player
     uniqueID: 3457860921
