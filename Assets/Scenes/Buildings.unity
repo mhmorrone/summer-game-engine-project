@@ -315,7 +315,7 @@ MonoBehaviour:
   bulletForce: 10
   bullet: {fileID: 7622188850503723235, guid: f5bbd8a988bb63b4ea189b9f7ce091bf, type: 3}
   cam: {fileID: 1923620790}
-  timeBtwnBullets: 0.05
+  timeBtwnBullets: 0.2
   bulletsPerReload: 20
   reload: 0
 --- !u!114 &547706346
