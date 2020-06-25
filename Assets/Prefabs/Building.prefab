@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 3606907849236740000}
   - component: {fileID: 8057864572297321768}
   - component: {fileID: 7841318653393320588}
+  - component: {fileID: 7235261149146198155}
   m_Layer: 12
   m_Name: StairsDown
   m_TagString: Untagged
@@ -265,7 +266,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.058421437}
   m_SpriteTilingProperty:
     border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
@@ -276,8 +277,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.16, y: 0.043157123}
   m_EdgeRadius: 0
+--- !u!114 &7235261149146198155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220694203601694254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205469064b1772146b8c58053eb4fb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7396348259067688879
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +302,7 @@ GameObject:
   - component: {fileID: 4844219442704571347}
   - component: {fileID: 1640799156536194267}
   - component: {fileID: 3048700953783517956}
+  - component: {fileID: 6847417852483544337}
   m_Layer: 12
   m_Name: StairsUp
   m_TagString: Untagged
@@ -373,7 +387,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.055935472}
   m_SpriteTilingProperty:
     border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
@@ -384,8 +398,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.16, y: 0.04315707}
   m_EdgeRadius: 0
+--- !u!114 &6847417852483544337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7396348259067688879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f25e15e260c3e540ae4e3a7ea6c9611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7584810338299568475
 GameObject:
   m_ObjectHideFlags: 0
