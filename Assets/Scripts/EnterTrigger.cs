@@ -9,7 +9,7 @@ namespace UnityEngine.Experimental.Rendering.Universal
     public class EnterTrigger : MonoBehaviour
     {
         public LightInsideBuilding light;
-        void OnTriggerEnter ()
+        void OnTriggerEnter2D ()
         {
             light.turnLightOn();
         }

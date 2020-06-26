@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1742,6 +1742,7 @@ GameObject:
   - component: {fileID: 1877503974}
   - component: {fileID: 1877503973}
   - component: {fileID: 1877503975}
+  - component: {fileID: 1877503976}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -1869,13 +1870,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877503970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50872440ab38dba489eb55a00c835603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1877503974}
   movespeed: 5
+--- !u!114 &1877503976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877503970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43cbf8c6f8e7af408ab02e9ff627424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rb: {fileID: 1877503974}
+  storedDirection: 
 --- !u!1 &2068240950
 GameObject:
   m_ObjectHideFlags: 0
