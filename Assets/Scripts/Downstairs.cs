@@ -6,6 +6,6 @@ public class Downstairs : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D col)
     {
-        col.gameObject.transform.Translate(0f, -999f, 0f);
+        col.gameObject.transform.Translate(0f, -1001f, 0f);
     }
 }
