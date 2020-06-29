@@ -11,6 +11,8 @@ namespace UnityEngine.Experimental.Rendering.Universal
         public Light2D light;
         public bool lightOn;
         public float lightIntensity = 1f;
+
+        float timer = 1f;
         
         void Start()
         {
@@ -21,6 +23,11 @@ namespace UnityEngine.Experimental.Rendering.Universal
         // Update is called once per frame
         void Update()
         {
+            timer -= Time.deltaTime;
+            if(timer > 0f)
+            {
+                lightOn = false;
+            }
             if (lightOn)
             {
                 light.intensity = lightIntensity;

@@ -183,12 +183,58 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662561660856420586, guid: 68660374f901259478c95d8b92dee0bb,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.051599853
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662561660856420586, guid: 68660374f901259478c95d8b92dee0bb,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.05680029
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662561660856420587, guid: 68660374f901259478c95d8b92dee0bb,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -294758261
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662561660856420587, guid: 68660374f901259478c95d8b92dee0bb,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662561660856420587, guid: 68660374f901259478c95d8b92dee0bb,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662561660856420591, guid: 68660374f901259478c95d8b92dee0bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2042488257643728720, guid: 68660374f901259478c95d8b92dee0bb,
         type: 3}
       propertyPath: m_Name
       value: Building
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3333260847237890254, guid: 68660374f901259478c95d8b92dee0bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790632604613212186, guid: 68660374f901259478c95d8b92dee0bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.069
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790632604613212186, guid: 68660374f901259478c95d8b92dee0bb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.065
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7668490383892254975, guid: 68660374f901259478c95d8b92dee0bb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 68660374f901259478c95d8b92dee0bb, type: 3}
 --- !u!1 &209609392
 GameObject:

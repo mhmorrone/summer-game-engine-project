@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class Locked : MonoBehaviour
 {
-    public bool isLocked = false;
-    public Collider2D door;
+    public bool isLocked = true;
 
 
     // Update is called once per frame
     void Update()
     {
-        if (isLocked)
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            door.enabled = true;
-        }
-        else
-        {
-            door.enabled = false;
+            isLocked = !isLocked;
         }
 
     }
