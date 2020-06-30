@@ -10,9 +10,9 @@ public class Item
     public Sprite icon;
     public Dictionary<string, int> stats = new Dictionary<string, int>();
     public int type;
+    public int weight;
 
-    public Item(int id, string title, string description, Sprite icon,
-                Dictionary<string, int> stats, int type)
+    public Item(int id, string title, string description, int type, int weight, Dictionary<string, int> stats)
     {
         this.id = id;
         this.title = title;
@@ -20,6 +20,9 @@ public class Item
         this.icon = Resources.Load<Sprite>("Sprites/Items/" + title);
         this.stats = stats;
         this.type = type;
+        this.weight = weight;
+        
+        
     }
 
     public Item(Item item)
@@ -27,7 +30,9 @@ public class Item
         this.id = item.id;
         this.title = item.title;
         this.description = item.description;
-        this.icon = Resources.Load<Sprite>("Sprites/Items" + item.title);
+        this.icon = Resources.Load<Sprite>("Sprites/Items/" + item.title);
+        this.type = item.type;
+        this.weight = item.weight;
         this.stats = item.stats;
     }
 
