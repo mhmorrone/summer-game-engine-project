@@ -16,6 +16,11 @@ public class ItemDatabase : MonoBehaviour
         return items.Find(item => item.id == id);
     }
 
+    public Item GetItem(string itemName)
+    {
+        return items.Find(item => item.title == itemName);
+    }
+
     void BuildDatabase()
     {
         // Item has the following members: int id, string title, string description, int type (1 = weapon, 2 = armor, 3 = hold item), int weight,
