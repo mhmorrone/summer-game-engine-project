@@ -11,8 +11,10 @@ public class Item
     public Dictionary<string, int> stats = new Dictionary<string, int>();
     public int type;
     public int weight;
-
-    public Item(int id, string title, string description, int type, int weight, Dictionary<string, int> stats)
+	public bool consumable;
+	public int value;
+	
+    public Item(int id, string title, string description, int type, int weight, bool consumable, int value, Dictionary<string, int> stats)
     {
         this.id = id;
         this.title = title;
@@ -21,8 +23,9 @@ public class Item
         this.stats = stats;
         this.type = type;
         this.weight = weight;
-        
-        
+		this.consumable = consumable;
+		this.value = value;
+		
     }
 
     public Item(Item item)
@@ -34,6 +37,8 @@ public class Item
         this.type = item.type;
         this.weight = item.weight;
         this.stats = item.stats;
+		this.consumable = item.consumable;
+		this.value = item.value;
     }
 
 }

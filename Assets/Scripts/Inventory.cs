@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
     {
         Item itemToAdd = itemDatabase.GetItem(id);
         characterItems.Add(itemToAdd);
-        Debug.Log("Gave item: " + itemToAdd.title);
+        Debug.Log("Gave item: " + itemToAdd.title + " which has a weight of " + itemToAdd.weight + " and a value of " + itemToAdd.value);
     }
 
     public Item checkForItem(int id)

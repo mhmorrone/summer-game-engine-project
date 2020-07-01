@@ -23,10 +23,10 @@ public class ItemDatabase : MonoBehaviour
 
     void BuildDatabase()
     {
-        // Item has the following members: int id, string title, string description, int type (1 = weapon, 2 = armor, 3 = hold item), int weight,
-        // Dictionary<string, int> stats 
+        // Item has the following members: int id, string title, string description, int type (1 = weapon, 2 = armor, 3 = hold item, 4 = backpack),
+        // int weight, bool consumable, int value, int valueDictionary<string, int> stats 
         items = new List<Item>() {
-            new Item(0, "Iron Sword", "A sword made of iron.",1,10,
+            new Item(0, "Iron Sword", "A sword made of iron.",1,10, true, 10,
             new Dictionary<string, int>
             {
                 {"Damage", 10 }
