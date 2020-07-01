@@ -8,7 +8,6 @@ public class stairs : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        col.gameObject.transform.Translate(0, 1000, 0);
-        //col.gameObject.transform.Translate(StairsLanding.transform.position - col.gameObject.transform.position);
+        col.gameObject.transform.Translate(StairsLanding.transform.position - col.gameObject.transform.position);
     }
 }
