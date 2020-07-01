@@ -529,6 +529,11 @@ PrefabInstance:
       propertyPath: m_BlendStyleIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
       propertyPath: m_Name
@@ -1254,8 +1259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LookaheadTime: 0.06
-  m_LookaheadSmoothing: 10
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 3
   m_LookaheadIgnoreY: 0
   m_XDamping: 1
   m_YDamping: 1
@@ -1263,12 +1268,12 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.46000004
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.36
-  m_DeadZoneHeight: 0.22
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.85
-  m_SoftZoneHeight: 0.75
+  m_SoftZoneWidth: 0.002
+  m_SoftZoneHeight: 0.002
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
