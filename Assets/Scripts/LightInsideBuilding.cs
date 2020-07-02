@@ -12,12 +12,13 @@ namespace UnityEngine.Experimental.Rendering.Universal
         public bool lightOn;
         public float lightIntensity = 1f;
 
-        float timer = 1f;
+        float timer;
         
         void Start()
         {
             lightOn = false;
             light.intensity = 0f;
+            timer = 0.1f;
         }
 
         // Update is called once per frame

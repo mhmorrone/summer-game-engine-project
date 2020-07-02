@@ -398,6 +398,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
+  trans: {fileID: 7584810338299568476}
+  playerLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  range: 1
 --- !u!61 &5538176176820356107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -411,7 +416,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.25, y: -0.02}
+  m_Offset: {x: -1.2308732, y: -0.01999998}
   m_SpriteTilingProperty:
     border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
@@ -422,7 +427,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.18, y: 1.14}
+  m_Size: {x: 2.2182539, y: 1.14}
   m_EdgeRadius: 0
 --- !u!114 &972707898911829412
 MonoBehaviour:
@@ -453,6 +458,10 @@ MonoBehaviour:
   open: 0
   trans: {fileID: 7584810338299568476}
   DoorHinge: {fileID: 5769723276110375290}
+  playerLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  range: 5
 --- !u!50 &1457970609713330507
 Rigidbody2D:
   serializedVersion: 4

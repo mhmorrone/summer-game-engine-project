@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_BlendStyleIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
       propertyPath: m_Name
@@ -367,6 +372,11 @@ PrefabInstance:
       propertyPath: m_BlendStyleIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
       propertyPath: m_Name
@@ -528,6 +538,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendStyleIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
@@ -691,6 +706,11 @@ PrefabInstance:
       propertyPath: m_BlendStyleIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
       propertyPath: m_Name
@@ -852,6 +872,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendStyleIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
@@ -1059,6 +1084,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendStyleIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
@@ -1307,6 +1337,11 @@ PrefabInstance:
       propertyPath: m_BlendStyleIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
       propertyPath: m_Name
@@ -1468,6 +1503,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendStyleIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
@@ -1685,6 +1725,11 @@ PrefabInstance:
       propertyPath: m_BlendStyleIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
       propertyPath: m_Name
@@ -1849,9 +1894,9 @@ GameObject:
   - component: {fileID: 1203814160}
   - component: {fileID: 1203814159}
   - component: {fileID: 1203814164}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7138,6 +7183,11 @@ PrefabInstance:
       propertyPath: m_BlendStyleIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
       propertyPath: m_Name
@@ -7366,6 +7416,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendStyleIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}

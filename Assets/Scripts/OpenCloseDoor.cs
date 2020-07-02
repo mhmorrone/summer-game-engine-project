@@ -9,7 +9,8 @@ public class OpenCloseDoor : MonoBehaviour
     public bool open = false;
     public Transform trans;
     public GameObject DoorHinge;
-
+    public LayerMask playerLayers;
+    public float range = 5f;
    
 
     // Update is called once per frame
@@ -19,14 +20,20 @@ public class OpenCloseDoor : MonoBehaviour
         {
             if(!locked.isLocked)
             {
-                open = !open;
-                if(open)
+                Collider2D[] players = Physics2D.OverlapCircleAll(trans.position, range, playerLayers);
+                if(players[0] != null)
                 {
-                    trans.RotateAround(DoorHinge.transform.position, Vector3.forward, -90);
-                } else
-                {
-                    trans.RotateAround(DoorHinge.transform.position, Vector3.forward, 90);
+                    open = !open;
+                    if (open)
+                    {
+                        trans.RotateAround(DoorHinge.transform.position, Vector3.forward, -90);
+                    }
+                    else
+                    {
+                        trans.RotateAround(DoorHinge.transform.position, Vector3.forward, 90);
+                    }
                 }
+                
             }
         }
         
