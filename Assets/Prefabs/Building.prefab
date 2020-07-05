@@ -49,6 +49,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1729164744346657970, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2870585560741702507, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
       propertyPath: lightOn
@@ -88,6 +93,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
@@ -254,6 +264,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}

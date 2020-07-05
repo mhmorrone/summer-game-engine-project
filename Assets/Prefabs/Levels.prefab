@@ -461,7 +461,8 @@ MonoBehaviour:
   playerLayers:
     serializedVersion: 2
     m_Bits: 2048
-  range: 5
+  range: 10
+  light: {fileID: 2870585560741702507}
 --- !u!50 &1457970609713330507
 Rigidbody2D:
   serializedVersion: 4

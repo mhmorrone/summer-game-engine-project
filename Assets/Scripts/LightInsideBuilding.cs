@@ -40,6 +40,7 @@ namespace UnityEngine.Experimental.Rendering.Universal
 
         public void turnLightOn()
         {
+            Debug.Log("Turn light on");
             lightOn = true;
         }
     }
