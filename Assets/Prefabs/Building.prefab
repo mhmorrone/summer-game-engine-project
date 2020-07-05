@@ -215,11 +215,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 727788201159793950}
     m_Modifications:
-    - target: {fileID: 1457970609713330507, guid: 39e873e21b853cc43a508c3a2dde7480,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1640799156536194267, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -274,11 +269,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7584810338299568476, guid: 39e873e21b853cc43a508c3a2dde7480,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7584810339170420544, guid: 39e873e21b853cc43a508c3a2dde7480,
         type: 3}
