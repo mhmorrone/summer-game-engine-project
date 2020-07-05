@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Locked : MonoBehaviour
@@ -15,12 +16,14 @@ public class Locked : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             Collider2D[] players = Physics2D.OverlapCircleAll(trans.position, range, playerLayers);
-            if (players[0] != null)
+            if (players != null)
             {
-               isLocked = !isLocked; 
+                UnityEngine.Debug.Log("unlock");
+                isLocked = !isLocked;
             }
-            
+
         }
+        isLocked = !isLocked;
 
     }
 }

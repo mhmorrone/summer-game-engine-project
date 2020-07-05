@@ -1,41 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
+using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Rendering;
 
-public class OpenCloseDoor : MonoBehaviour
+namespace UnityEngine.Experimental.Rendering.Universal
 {
-    public Locked locked;
-    public bool open = false;
-    public Transform trans;
-    public GameObject DoorHinge;
-    public LayerMask playerLayers;
-    public float range = 5f;
-   
-
-    // Update is called once per frame
-    void Update()
+    public class OpenCloseDoor : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        public Locked locked;
+        public bool open = false;
+        public Transform trans;
+        public GameObject DoorHinge;
+        public LayerMask playerLayers;
+        public float range = 10f;
+        public LightInsideBuilding light;
+
+        // Update is called once per frame
+        void Update()
         {
-            if(!locked.isLocked)
+            if (Input.GetKeyDown(KeyCode.C))
             {
-                Collider2D[] players = Physics2D.OverlapCircleAll(trans.position, range, playerLayers);
-                if(players[0] != null)
+                if (!locked.isLocked)
                 {
-                    open = !open;
-                    if (open)
+                    Collider2D[] players = Physics2D.OverlapCircleAll(trans.position, range, playerLayers);
+                    if (players != null)
                     {
-                        trans.RotateAround(DoorHinge.transform.position, Vector3.forward, -90);
+                        open = !open;
+                        if (open)
+                        {
+                            Debug.Log("Open");
+                            trans.RotateAround(DoorHinge.transform.position, Vector3.forward, -90);
+                            light.turnLightOn();
+                        }
+                        else
+                        {
+                            trans.RotateAround(DoorHinge.transform.position, Vector3.forward, 90);
+                        }
                     }
-                    else
-                    {
-                        trans.RotateAround(DoorHinge.transform.position, Vector3.forward, 90);
-                    }
+
                 }
-                
             }
+
         }
-        
     }
 }
+
