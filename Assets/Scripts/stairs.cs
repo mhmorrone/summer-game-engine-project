@@ -5,7 +5,7 @@ using UnityEngine;
 public class stairs : MonoBehaviour
 {
     public GameObject StairsLanding;
-    private int distance = 1000;
+    //private int distance = 1000;
 
     /*
      * TODO:Find a way to distinguish between the two floors
@@ -19,9 +19,9 @@ public class stairs : MonoBehaviour
      */
     void OnTriggerEnter2D(Collider2D col)
     {
-        Vector3 pos = col.gameObject.transform.position;
+        /*Vector3 pos = col.gameObject.transform.position;
         col.gameObject.transform.position = new Vector3(pos.x + 10, pos.y + distance, pos.z);
-        distance = -distance;
-        //col.gameObject.transform.Translate(StairsLanding.transform.position - col.gameObject.transform.position);
+        distance = -distance;*/
+        col.gameObject.transform.Translate(StairsLanding.transform.position - col.gameObject.transform.position);
     }
 }
