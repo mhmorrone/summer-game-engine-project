@@ -402,7 +402,7 @@ MonoBehaviour:
   playerLayers:
     serializedVersion: 2
     m_Bits: 2048
-  range: 1
+  range: 10
 --- !u!61 &5538176176820356107
 BoxCollider2D:
   m_ObjectHideFlags: 0

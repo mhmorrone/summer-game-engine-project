@@ -16,27 +16,34 @@ namespace UnityEngine.Experimental.Rendering.Universal
         public float range = 10f;
         public LightInsideBuilding light;
 
+        float timer = 0f;
+
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            timer -= Time.deltaTime;
+            if (timer <= 0 && Input.GetKeyDown(KeyCode.C))
             {
                 if (!locked.isLocked)
                 {
                     Collider2D[] players = Physics2D.OverlapCircleAll(trans.position, range, playerLayers);
                     if (players != null)
                     {
-                        open = !open;
-                        if (open)
+                        if ((players[0].transform.position - trans.position).magnitude < range)
                         {
-                            Debug.Log("Open");
-                            trans.RotateAround(DoorHinge.transform.position, Vector3.forward, -90);
-                            light.turnLightOn();
+                            timer = 1f;
+                            open = !open;
+                            if (open)
+                            {
+                                trans.RotateAround(DoorHinge.transform.position, Vector3.forward, -90);
+                                light.turnLightOn();
+                            }
+                            else
+                            {
+                                trans.RotateAround(DoorHinge.transform.position, Vector3.forward, 90);
+                            }
                         }
-                        else
-                        {
-                            trans.RotateAround(DoorHinge.transform.position, Vector3.forward, 90);
-                        }
+                        
                     }
 
                 }
