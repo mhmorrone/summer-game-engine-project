@@ -8,7 +8,7 @@ public class Locked : MonoBehaviour
     public bool isLocked = true;
     public Transform trans;
     public LayerMask playerLayers;
-    public float range = 1f;
+    public float range = 10f;
 
     // Update is called once per frame
     void Update()
@@ -18,8 +18,11 @@ public class Locked : MonoBehaviour
             Collider2D[] players = Physics2D.OverlapCircleAll(trans.position, range, playerLayers);
             if (players != null)
             {
-                UnityEngine.Debug.Log("unlock");
-                isLocked = !isLocked;
+                if ((players[0].transform.position - trans.position).magnitude < range)
+                {
+                    isLocked = !isLocked;
+                }
+                
             }
 
         }
