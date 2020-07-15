@@ -9,14 +9,21 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public float movespeed = 5f;
     Vector2 movement;
-    
+    public Animator animator;
+
 
     // Update is called once per frame
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+        if(movement.sqrMagnitude != 0)
+        {
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+        }
+        
         
     }
 
