@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 2213787526152074711}
   - component: {fileID: 2213787526152074700}
   - component: {fileID: 2213787526152074701}
+  - component: {fileID: 6262361689425817563}
+  - component: {fileID: 872906814770820099}
+  - component: {fileID: 1583969294204097968}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -180,3 +183,49 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6262361689425817563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2213787526152074710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25eb5a2d75320d428da61c96812bae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  recoverySpeed: 0.05000000074505806
+  damageResistance: 1
+--- !u!114 &872906814770820099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2213787526152074710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80172567738ac78418b862007475c3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHunger: 100
+  currentHunger: 0
+  StarvationSpeed: 0.009999999776482582
+--- !u!114 &1583969294204097968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2213787526152074710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c749bbc757660684a84640ce92a668d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 2213787526152074697}
+  playerHealth: {fileID: 6262361689425817563}
+  playerHunger: {fileID: 872906814770820099}
