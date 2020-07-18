@@ -10,6 +10,8 @@ TagManager:
   - Close
   - Level1
   - Level2
+  - Hunger
+  - Health
   layers:
   - Default
   - TransparentFX
