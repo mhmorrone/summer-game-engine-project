@@ -4,33 +4,89 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<Item> characterItems = new List<Item>();
     public ItemDatabase itemDatabase;
+    public Item weapon; //0
+    public Item gear;   //1
+    public Item held;   //2
+    public Item bag;    //3
 
     private void Start()
     {
         GiveItem(0);
-        RemoveItem(0);
+       // RemoveItem(0);
     }
+
     public void GiveItem(int id)
     {
         Item itemToAdd = itemDatabase.GetItem(id);
-        characterItems.Add(itemToAdd);
-        Debug.Log("Gave item: " + itemToAdd.title + " which has a weight of " + itemToAdd.weight + " and a value of " + itemToAdd.value);
+        //characterItems.Add(itemToAdd);
+    	switch(itemToAdd.type){
+	    case 0:
+		if (weapon !=null) RemoveItem(weapon.id);
+		weapon = itemToAdd;
+                break;
+	    case 1:
+		if (gear !=null) RemoveItem(gear.id);
+		gear = itemToAdd;
+                break;
+	    case 2:
+		if (held !=null) RemoveItem(held.id);
+		held = itemToAdd;
+                break;
+	    case 3:
+		if (bag !=null) RemoveItem(bag.id);
+		bag = itemToAdd;
+                break;
+        }
+	Debug.Log("Gave item: " + itemToAdd.title + " which has a weight of " + itemToAdd.weight + " and a value of " + itemToAdd.value);
     }
 
-    public Item checkForItem(int id)
-    {
-        return characterItems.Find(item => item.id == id);
+    public void drop(int id){
+	//TODO
     }
 
     public void RemoveItem(int id)
     {
-        Item item = checkForItem(id);
+        Item item = itemDatabase.GetItem(id);
         if (item != null)
         {
-            characterItems.Remove(item);
+            switch (item.type)
+            {
+                case 0:                   
+                    weapon = null;
+                    break;
+                case 1:
+                    gear = null;
+                    break;
+                case 2:
+                    held = null;
+                    break;
+                case 3:
+                    bag = null;
+                    break;
+            }
             Debug.Log("Item removed from inventory: " + item.title);
+			drop(id);
         }
+
     }
+    public void removeWeapon()
+    {
+        RemoveItem(weapon.id);
+    }
+    public void removeGear()
+    {
+        RemoveItem(gear.id);
+    }
+    public void removeHold()
+    {
+        RemoveItem(held.id);
+    }
+    public void removeBackpack()
+    {
+        RemoveItem(bag.id);
+    }
+
+
+
 }

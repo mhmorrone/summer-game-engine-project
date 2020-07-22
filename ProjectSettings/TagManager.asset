@@ -12,6 +12,14 @@ TagManager:
   - Level2
   - Hunger
   - Health
+  - Weapon
+  - Gear
+  - Hold
+  - Backpack
+  - WeaponX
+  - GearX
+  - HoldX
+  - BackpackX
   layers:
   - Default
   - TransparentFX
