@@ -29,18 +29,16 @@ public class NPCWalking : MonoBehaviour
                 walk = 0;
             counter = Random.Range(120, 300);
             walkDirection = Random.Range(0.0f, 2.0f * 3.14f);
-            animator.SetFloat("IsWalking", walk);
             movement.x = Mathf.Cos(walkDirection) * moveSpeed;
-            animator.SetFloat("Horizontal", movement.x);
             movement.y = Mathf.Sin(walkDirection) * moveSpeed;
-            animator.SetFloat("Vertical", movement.y);
         }
         else
         {
             counter--;
         }
-
-
+        animator.SetFloat("IsWalking", walk);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Horizontal", movement.x);
         if (walk == 1)
         {
             rb2d.MovePosition(rb2d.position + movement * Time.fixedDeltaTime);
