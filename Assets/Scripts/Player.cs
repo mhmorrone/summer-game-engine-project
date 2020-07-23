@@ -109,9 +109,14 @@ public class Player : MonoBehaviour
         //Debug.Log("Hunger is " + playerHunger.currentHunger);
        // Debug.Log("Health is " + playerHealth.currentHealth);
 
-        if (playerHealth.currentHealth == 0)
+        if (playerHealth.currentHealth <= 0)
         {
-            Debug.Log("You died!");
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        Debug.Log("You died!");
     }
 }

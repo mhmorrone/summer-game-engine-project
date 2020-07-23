@@ -20,6 +20,7 @@ TagManager:
   - GearX
   - HoldX
   - BackpackX
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - Object
   - Player
   - Level 2
-  - 
+  - NPC
   - 
   - 
   - 
@@ -68,6 +69,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3457860921
+    locked: 0
+  - name: NPC
+    uniqueID: 446807531
     locked: 0
   - name: Object
     uniqueID: 4000209035

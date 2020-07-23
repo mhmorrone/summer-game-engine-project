@@ -11,6 +11,7 @@ public class NPCWalking : MonoBehaviour
     public int counter = 0;
     public Vector2 movement;
     public Animator animator;
+    public bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,28 +22,32 @@ public class NPCWalking : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (counter == 0)
+        if (!isDead)
         {
-            if (walk == 0)
-                walk = 1;
+            if (counter == 0)
+            {
+                if (walk == 0)
+                    walk = 1;
+                else
+                    walk = 0;
+                counter = Random.Range(120, 300);
+                walkDirection = Random.Range(0.0f, 2.0f * 3.14f);
+                movement.x = Mathf.Cos(walkDirection) * moveSpeed;
+                movement.y = Mathf.Sin(walkDirection) * moveSpeed;
+            }
             else
-                walk = 0;
-            counter = Random.Range(120, 300);
-            walkDirection = Random.Range(0.0f, 2.0f * 3.14f);
-            movement.x = Mathf.Cos(walkDirection) * moveSpeed;
-            movement.y = Mathf.Sin(walkDirection) * moveSpeed;
+            {
+                counter--;
+            }
+            animator.SetFloat("IsWalking", walk);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Horizontal", movement.x);
+            if (walk == 1)
+            {
+                rb2d.MovePosition(rb2d.position + movement * Time.fixedDeltaTime);
+            }
         }
-        else
-        {
-            counter--;
-        }
-        animator.SetFloat("IsWalking", walk);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Horizontal", movement.x);
-        if (walk == 1)
-        {
-            rb2d.MovePosition(rb2d.position + movement * Time.fixedDeltaTime);
-        }
+        
 
 
     }

@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Actions : MonoBehaviour
 {
     public bool follow = true;
     public Transform trans;
-    public float range = 10f;
     public NPCWalking walkScript;
+    public bool isDead = false;
+    public LayerMask characterLayers;
+    public float attackRange = 1f;
+    public int damage = 5;
 
 
     // Start is called before the first frame update
@@ -20,19 +24,23 @@ public class Actions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (follow)
-            Follow();
-        if (Input.GetKeyDown(KeyCode.T))
+        if (!isDead)
         {
-            walkScript.movement.x = 0;
-            walkScript.movement.y = 0;
-            walkScript.walk = 0;
-            Talk();
+            if (follow)
+                Follow();
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                walkScript.movement.x = 0;
+                walkScript.movement.y = 0;
+                walkScript.walk = 0;
+                Talk();
+            }
         }
+        
     }
 
     //Follow player - activate when part of the group for the player
-    void Follow()
+    public void Follow(float range = 10f)
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         if (players != null)
@@ -57,18 +65,29 @@ public class Actions : MonoBehaviour
         }
     }
 
+    //Fight
+    public void Fight()
+    {
+        Collider2D[] hitCharacters = Physics2D.OverlapCircleAll(trans.position, attackRange, characterLayers);
+        foreach(Collider2D character in hitCharacters)
+        {
+            character.GetComponent<Health>().TakeDamage(damage);
+        }
+    }
+
     //Move NPC to certain place
-    void Move()
+    public void Move()
     {
 
     }
 
     //Talk to player
-    void Talk()
+    public void Talk()
     {
         //walkScript.enable = false;
         //Display dialogue and have interactable elements
         //walkScript.enable = true;
+        //Debug.Log("Hi");
     }
 
     //Can place other actions for NPCs here (such as trade, fighting, etc.)
