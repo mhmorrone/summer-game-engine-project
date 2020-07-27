@@ -433,7 +433,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &907470460
 MonoBehaviour:
@@ -599,8 +599,8 @@ MonoBehaviour:
   characterLayers:
     serializedVersion: 2
     m_Bits: 10240
-  attackRange: 1
-  damage: 5
+  attackRange: 0.5
+  damage: 50
 --- !u!114 &907470466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,6 +745,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2213787526152074696, guid: 07ed57a136e2e624db22db633ec0a481,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2213787526152074699, guid: 07ed57a136e2e624db22db633ec0a481,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1045,7 +1050,7 @@ MonoBehaviour:
   characterLayers:
     serializedVersion: 2
     m_Bits: 10240
-  attackRange: 1
+  attackRange: 5
   damage: 5
 --- !u!114 &1609349903
 MonoBehaviour:
@@ -1110,7 +1115,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &1609349907
 SpriteRenderer:

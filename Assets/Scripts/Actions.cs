@@ -11,7 +11,7 @@ public class Actions : MonoBehaviour
     public NPCWalking walkScript;
     public bool isDead = false;
     public LayerMask characterLayers;
-    public float attackRange = 1f;
+    public float attackRange = 5f;
     public int damage = 5;
 
 
