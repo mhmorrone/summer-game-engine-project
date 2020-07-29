@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
 //Player will contain all stats/attributes of the player character. Add to this as we develop more scripts for the player character.
 public class Player : MonoBehaviour
@@ -10,7 +11,7 @@ public class Player : MonoBehaviour
     public PlayerMovement playerMovement;
     public Health playerHealth;
     public Hunger playerHunger;
-    public Text textbox;
+   /* public Text textbox;
     public Text textbox2;
     public Image weapon;
     public Image gear;
@@ -20,11 +21,16 @@ public class Player : MonoBehaviour
     public Button weaponX;
     public Button gearX;
     public Button holdX;
-    public Button backpackX;
+    public Button backpackX;*/
+    public LayerMask NPCLayers;
+    public Transform trans;
+    public float attackRange = 0.5f;
+    public Animator animator;
+    public int damage;
     // Start is called before the first frame update
     void Start()
     {
-        inv = GetComponent<Inventory>();
+        /*inv = GetComponent<Inventory>();
         textbox = GameObject.FindGameObjectWithTag("Hunger").GetComponent<Text>();
         textbox2 = GameObject.FindGameObjectWithTag("Health").GetComponent<Text>();
         weapon = GameObject.FindGameObjectWithTag("Weapon").GetComponent<Image>();
@@ -35,7 +41,7 @@ public class Player : MonoBehaviour
         weaponX = GameObject.FindGameObjectWithTag("WeaponX").GetComponent<Button>();
         gearX = GameObject.FindGameObjectWithTag("GearX").GetComponent<Button>();
         holdX = GameObject.FindGameObjectWithTag("HoldX").GetComponent<Button>();
-        backpackX = GameObject.FindGameObjectWithTag("BackpackX").GetComponent<Button>();
+        backpackX = GameObject.FindGameObjectWithTag("BackpackX").GetComponent<Button>();*/
 
 
     }
@@ -43,7 +49,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inv.weapon != null)
+        if (playerHealth.isDead)
+        {
+            return;
+        }
+        /*if (inv.weapon != null)
         {
             weapon.sprite = inv.weapon.icon;
             weaponX.interactable = true;
@@ -94,7 +104,7 @@ public class Player : MonoBehaviour
 
        // Debug.Log("Changing weapon sprite to: " + inv.weapon.title);
         textbox.text = "Hunger: " + playerHunger.currentHunger;
-        textbox2.text = "Health: " + playerHealth.currentHealth;
+        textbox2.text = "Health: " + playerHealth.currentHealth;*/
 
         if (playerHunger.currentHunger == 0)
         {
@@ -113,10 +123,27 @@ public class Player : MonoBehaviour
         {
             Die();
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            UnityEngine.Debug.Log("Attack!");
+            Attack();
+        }
+    }
+
+    void Attack()
+    {
+        animator.SetTrigger("Attack");
+        Collider2D[] hitCharacters = Physics2D.OverlapCircleAll(trans.position, attackRange, NPCLayers);
+        foreach (Collider2D character in hitCharacters)
+        {
+            character.GetComponent<Health>().TakeDamage(damage);
+        }
     }
 
     public void Die()
     {
         Debug.Log("You died!");
+        playerHealth.isDead = true;
+        playerMovement.enable = false;
     }
 }

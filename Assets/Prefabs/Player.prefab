@@ -104,6 +104,7 @@ MonoBehaviour:
   rb: {fileID: 2213787526152074696}
   movespeed: 10
   animator: {fileID: 2213787526152074701}
+  enable: 1
 --- !u!50 &2213787526152074696
 Rigidbody2D:
   serializedVersion: 4
@@ -199,6 +200,7 @@ MonoBehaviour:
   currentHealth: 0
   recoverySpeed: 0.05000000074505806
   damageResistance: 1
+  isDead: 0
 --- !u!114 &872906814770820099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,3 +231,10 @@ MonoBehaviour:
   playerMovement: {fileID: 2213787526152074697}
   playerHealth: {fileID: 6262361689425817563}
   playerHunger: {fileID: 872906814770820099}
+  NPCLayers:
+    serializedVersion: 2
+    m_Bits: 8192
+  trans: {fileID: 2213787526152074699}
+  attackRange: 1
+  animator: {fileID: 2213787526152074701}
+  damage: 5

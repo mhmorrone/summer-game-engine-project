@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
                 //if (UnityEngine.Random.Range(0, 1) == 1)
                 //{
                     GetComponent<Actions>().Fight();
-                UnityEngine.Debug.Log("Attack!");
+                UnityEngine.Debug.Log("Fight!");
                 //}
 
             }

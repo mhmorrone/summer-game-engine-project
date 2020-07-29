@@ -599,7 +599,7 @@ MonoBehaviour:
   characterLayers:
     serializedVersion: 2
     m_Bits: 10240
-  attackRange: 0.5
+  attackRange: 1
   damage: 50
 --- !u!114 &907470466
 MonoBehaviour:
@@ -745,6 +745,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1583969294204097968, guid: 07ed57a136e2e624db22db633ec0a481,
+        type: 3}
+      propertyPath: NPCLayers.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583969294204097968, guid: 07ed57a136e2e624db22db633ec0a481,
+        type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2213787526152074696, guid: 07ed57a136e2e624db22db633ec0a481,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -1050,7 +1060,7 @@ MonoBehaviour:
   characterLayers:
     serializedVersion: 2
     m_Bits: 10240
-  attackRange: 5
+  attackRange: 1
   damage: 5
 --- !u!114 &1609349903
 MonoBehaviour:
@@ -1262,7 +1272,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609349900}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 286d2e84c954e284fbfce71e74a4491f, type: 3}
   m_Name: 

@@ -10,11 +10,16 @@ public class PlayerMovement : MonoBehaviour
     public float movespeed = 5f;
     Vector2 movement;
     public Animator animator;
+    public bool enable = true;
 
 
     // Update is called once per frame
     void Update()
     {
+        if (!enable)
+        {
+            return;
+        }
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Speed", movement.sqrMagnitude);
