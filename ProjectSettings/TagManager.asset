@@ -21,6 +21,7 @@ TagManager:
   - HoldX
   - BackpackX
   - NPC
+  - InventoryButton
   layers:
   - Default
   - TransparentFX
@@ -36,7 +37,7 @@ TagManager:
   - Player
   - Level 2
   - NPC
-  - 
+  - UIBanners
   - 
   - 
   - 
@@ -75,4 +76,7 @@ TagManager:
     locked: 0
   - name: Object
     uniqueID: 4000209035
+    locked: 0
+  - name: UIBanners
+    uniqueID: 2330039817
     locked: 0
