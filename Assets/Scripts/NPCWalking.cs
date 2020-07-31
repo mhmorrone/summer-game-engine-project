@@ -12,6 +12,7 @@ public class NPCWalking : MonoBehaviour
     public Vector2 movement;
     public Animator animator;
     public bool isDead = false;
+    public bool enable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,10 @@ public class NPCWalking : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!enable)
+        {
+            return;
+        }
         if (!isDead)
         {
             if (counter == 0)

@@ -7,32 +7,28 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform trans; 
+    public Transform trans;
+    Actions action;
     // Start is called before the first frame update
     void Start()
     {
-        
+        action = trans.GetComponent<Actions>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        if (players != null)
+        if (action.distance <= action.attackRange)
         {
-            if ((players[0].transform.position - trans.position).magnitude > 100f)
-            {
-                GetComponent<Actions>().Follow(0.1f);
-            }
-            if ((players[0].transform.position - trans.position).magnitude < 3f)
-            {
-                //if (UnityEngine.Random.Range(0, 1) == 1)
-                //{
-                    GetComponent<Actions>().Fight();
-                UnityEngine.Debug.Log("Fight!");
-                //}
-
-            }
+            action.animator.SetTrigger("Attack");
         }
+        /*if ((player.transform.position - trans.position).magnitude < 3f)
+        {
+            //if (UnityEngine.Random.Range(0, 1) == 1)
+            //{
+                GetComponent<Actions>().Fight();
+                UnityEngine.Debug.Log("Fight!");
+            //}
+        }*/
     }
 }
