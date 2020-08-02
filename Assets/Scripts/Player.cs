@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public PlayerMovement playerMovement;
     public Health playerHealth;
     public Hunger playerHunger;
-   /* public Text textbox;
+    public Text textbox;
     public Text textbox2;
     public Image weapon;
     public Image gear;
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     public Button weaponX;
     public Button gearX;
     public Button holdX;
-    public Button backpackX;*/
+    public Button backpackX;
     public LayerMask NPCLayers;
     public Transform trans;
     public float attackRange = 0.5f;
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*inv = GetComponent<Inventory>();
+        inv = GetComponent<Inventory>();
         textbox = GameObject.FindGameObjectWithTag("Hunger").GetComponent<Text>();
         textbox2 = GameObject.FindGameObjectWithTag("Health").GetComponent<Text>();
         weapon = GameObject.FindGameObjectWithTag("Weapon").GetComponent<Image>();
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         weaponX = GameObject.FindGameObjectWithTag("WeaponX").GetComponent<Button>();
         gearX = GameObject.FindGameObjectWithTag("GearX").GetComponent<Button>();
         holdX = GameObject.FindGameObjectWithTag("HoldX").GetComponent<Button>();
-        backpackX = GameObject.FindGameObjectWithTag("BackpackX").GetComponent<Button>();*/
+        backpackX = GameObject.FindGameObjectWithTag("BackpackX").GetComponent<Button>();
 
 
     }
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        /*if (inv.weapon != null)
+        if (inv.weapon != null)
         {
             weapon.sprite = inv.weapon.icon;
             weaponX.interactable = true;
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
 
        // Debug.Log("Changing weapon sprite to: " + inv.weapon.title);
         textbox.text = "Hunger: " + playerHunger.currentHunger;
-        textbox2.text = "Health: " + playerHealth.currentHealth;*/
+        textbox2.text = "Health: " + playerHealth.currentHealth;
 
         if (playerHunger.currentHunger == 0)
         {
