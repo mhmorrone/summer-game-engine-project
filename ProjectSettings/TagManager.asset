@@ -22,6 +22,7 @@ TagManager:
   - BackpackX
   - NPC
   - InventoryButton
+  - SoundManager
   layers:
   - Default
   - TransparentFX
