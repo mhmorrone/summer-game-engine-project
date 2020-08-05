@@ -23,6 +23,7 @@ TagManager:
   - NPC
   - InventoryButton
   - SoundManager
+  - Zombie
   layers:
   - Default
   - TransparentFX
@@ -39,8 +40,8 @@ TagManager:
   - Level 2
   - NPC
   - UIBanners
-  - 
-  - 
+  - Zombie
+  - Enemy
   - 
   - 
   - 
@@ -80,4 +81,7 @@ TagManager:
     locked: 0
   - name: UIBanners
     uniqueID: 2330039817
+    locked: 0
+  - name: Zombie
+    uniqueID: 3811985309
     locked: 0

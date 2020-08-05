@@ -35,6 +35,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage * damageResistance;
+        GetComponent<Animator>().SetTrigger("Hurt");
     }
 
     public void Heal(int heal)

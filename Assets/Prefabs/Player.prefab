@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2213787526152074696}
-  movespeed: 10
+  movespeed: 5
   animator: {fileID: 2213787526152074701}
   enable: 1
 --- !u!50 &2213787526152074696
@@ -233,8 +233,8 @@ MonoBehaviour:
   playerHunger: {fileID: 872906814770820099}
   NPCLayers:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 40960
   trans: {fileID: 2213787526152074699}
   attackRange: 1
   animator: {fileID: 2213787526152074701}
-  damage: 5
+  damage: 10

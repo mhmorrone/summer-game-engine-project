@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -12,30 +13,36 @@ public class Actions : MonoBehaviour
     public NPCWalking walkScript;
     public bool isDead = false;
     public LayerMask characterLayers;
-    public float attackRange = 3f;
+    public float attackRange = 5f;
     public int damage = 5;
     public Vector3 attackOffset;
     public Animator animator;
     GameObject player;
     Rigidbody2D rb;
+    int counter;
     public float distance;
+    Vector2 target;
+    public Vector2 newPos;
 
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        counter = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        counter -= 1;
         if (!isDead)
         {
             distance = Vector2.Distance(player.transform.position, trans.position);
             animator.SetFloat("Distance", distance);
             if (follow)
                 Follow();
+                
             if (Input.GetKeyDown(KeyCode.T))
             {
                 walkScript.movement.x = 0;
@@ -50,11 +57,16 @@ public class Actions : MonoBehaviour
     //Follow player - activate when part of the group for the player
     public void Follow()
     {
-        Vector2 target = new Vector2(player.transform.position.x + UnityEngine.Random.Range(-5f, 5f), player.transform.position.y + UnityEngine.Random.Range(-5f, 5f));
-        Vector2 newPos = Vector2.MoveTowards(trans.position, target, walkScript.moveSpeed * Time.fixedDeltaTime);
-        animator.SetFloat("Vertical", (newPos.y - trans.position.y) * 100);
-        animator.SetFloat("Horizontal", (newPos.x - trans.position.x) * 100);
-        animator.SetFloat("IsWalking", 1);
+        if(counter <= 0)
+        {
+            counter = 50;
+            //target = new Vector2(player.transform.position.x + UnityEngine.Random.Range(-1f, 1f), player.transform.position.y + UnityEngine.Random.Range(-5f, 5f));
+            target = new Vector2(player.transform.position.x, player.transform.position.y);
+            animator.SetFloat("Vertical", (newPos.y - trans.position.y) * 100);
+            animator.SetFloat("Horizontal", (newPos.x - trans.position.x) * 100);
+            animator.SetFloat("IsWalking", 1);
+        }
+        newPos = Vector2.MoveTowards(trans.position, target, walkScript.moveSpeed * Time.fixedDeltaTime);
         trans.GetComponent<Rigidbody2D>().MovePosition(newPos);
     }
 
@@ -63,8 +75,8 @@ public class Actions : MonoBehaviour
     {
         animator.SetFloat("IsWalking", 0);
         Vector3 pos = trans.position;
-        pos += trans.right * walkScript.movement.x;
-        pos += trans.up * walkScript.movement.y;
+        pos.x += distance * 0.5f * walkScript.movement.x/Math.Abs(walkScript.movement.x);
+        pos.y += distance * 0.5f * walkScript.movement.y / Math.Abs(walkScript.movement.y);
 
         Collider2D[] hitCharacters = Physics2D.OverlapCircleAll(trans.position, attackRange, characterLayers);
         foreach(Collider2D character in hitCharacters)
