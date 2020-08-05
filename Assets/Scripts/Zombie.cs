@@ -21,10 +21,11 @@ public class Zombie : MonoBehaviour
         if (action.distance <= action.attackRange)
         {
             action.follow = false;
+            action.animator.SetFloat("IsWalking", 0);
             if (cnt <= 0)
             {
                 action.Fight();
-                cnt = 100;
+                cnt = 25;
             }
         }
         else

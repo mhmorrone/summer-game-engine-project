@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 3276602710801188551}
   walk: 0
-  moveSpeed: 0.5
+  moveSpeed: 0.75
   walkDirection: 0
   counter: 0
   movement: {x: 0, y: 0}
@@ -162,7 +162,7 @@ MonoBehaviour:
   characterLayers:
     serializedVersion: 2
     m_Bits: 10240
-  attackRange: 0.7
+  attackRange: 1
   damage: 5
   attackOffset: {x: 0, y: 0, z: 0}
   animator: {fileID: 3276602710801188553}
@@ -229,7 +229,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.09218633, y: -0.4262638}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -240,7 +240,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6, y: 5.9}
+  m_Size: {x: 2.092973, y: 2.8355055}
   m_EdgeRadius: 0
 --- !u!95 &3276602710801188553
 Animator:

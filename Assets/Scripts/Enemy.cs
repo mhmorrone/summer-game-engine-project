@@ -24,11 +24,12 @@ public class Enemy : MonoBehaviour
         if (action.distance <= action.attackRange)
         {
             action.follow = false;
+            action.animator.SetFloat("IsWalking", 0);
             if (cnt <= 0)
             {
                 action.animator.SetTrigger("Attack");
                 //action.Fight();
-                cnt = 200;
+                cnt = 25;
             }
         }
         else
