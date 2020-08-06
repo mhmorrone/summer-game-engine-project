@@ -10,11 +10,13 @@ public class Health : MonoBehaviour
     public double recoverySpeed = 0.05f;
     public double damageResistance = 1f;
     public bool isDead = false;
+    public int zombieChance;
     
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        zombieChance = 0;
     }
 
     // Update is called once per frame

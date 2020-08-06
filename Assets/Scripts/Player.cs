@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     public float attackRange = 0.5f;
     public Animator animator;
     public int damage;
+    public GameObject zombie;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +44,6 @@ public class Player : MonoBehaviour
         gearX = GameObject.FindGameObjectWithTag("GearX").GetComponent<Button>();
         holdX = GameObject.FindGameObjectWithTag("HoldX").GetComponent<Button>();
         backpackX = GameObject.FindGameObjectWithTag("BackpackX").GetComponent<Button>();
-
 
     }
 
@@ -145,5 +146,19 @@ public class Player : MonoBehaviour
         Debug.Log("You died!");
         playerHealth.isDead = true;
         playerMovement.enable = false;
+        if (GetComponent<Health>().zombieChance > UnityEngine.Random.Range(5, 100))
+        {
+            for (int i = 200; i > GetComponent<Health>().zombieChance; i--)
+            {
+                //Wait an amount of time inversely proportional to the number of times character was attacked by a zombie to become a zombie
+            }
+            Zombieify();
+        }
+    }
+
+    public void Zombieify()
+    {
+        Instantiate(zombie, playerHunger.GetComponent<Transform>().position, playerHunger.GetComponent<Transform>().rotation);
+        Destroy(gameObject);
     }
 }

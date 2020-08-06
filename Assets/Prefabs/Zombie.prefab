@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: 3276602710801188551}
   - component: {fileID: 3276602710801188550}
   - component: {fileID: 3276602710801188553}
+  - component: {fileID: 6712546442144565601}
+  - component: {fileID: 4034393249891225897}
   m_Layer: 15
   m_Name: Zombie
   m_TagString: Zombie
@@ -122,6 +124,7 @@ MonoBehaviour:
   recoverySpeed: 0.1
   damageResistance: 5
   isDead: 0
+  zombieChance: 0
 --- !u!114 &3276602710801188554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +164,7 @@ MonoBehaviour:
   isDead: 0
   characterLayers:
     serializedVersion: 2
-    m_Bits: 10240
+    m_Bits: 75776
   attackRange: 1
   damage: 5
   attackOffset: {x: 0, y: 0, z: 0}
@@ -182,6 +185,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCHealth: {fileID: 3276602710801188555}
   NPCHunger: {fileID: 3276602710801188552}
+  traits: {fileID: 6712546442144565601}
+  skills: {fileID: 4034393249891225897}
+  zombie: {fileID: 3276602710801188593}
 --- !u!114 &3276602710801188548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,3 +267,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6712546442144565601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3276602710801188593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745576fb37148404cb96ed5bb1e08494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4034393249891225897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3276602710801188593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72bdd7358903ab343a7ec7eb865a8c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -17,6 +17,10 @@ public class Zombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (action.isDead)
+        {
+            return;
+        }
         cnt -= 1;
         if (action.distance <= action.attackRange)
         {
@@ -24,7 +28,8 @@ public class Zombie : MonoBehaviour
             action.animator.SetFloat("IsWalking", 0);
             if (cnt <= 0)
             {
-                action.Fight();
+                action.Fight(true);
+                trans.GetComponent<Hunger>().Eat(5);
                 cnt = 25;
             }
         }

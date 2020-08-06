@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3188720392616563662}
   - component: {fileID: 3188720392616563663}
   - component: {fileID: 3188720392616563656}
+  - component: {fileID: 1659912173637664883}
   m_Layer: 13
   m_Name: NPC
   m_TagString: NPC
@@ -250,6 +251,7 @@ MonoBehaviour:
   animator: {fileID: 3188720392616563505}
   distance: 0
   newPos: {x: 0, y: 0}
+  zombieChance: 0
 --- !u!114 &3188720392616563662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,3 +310,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8394176, y: 2.8021355}
   m_EdgeRadius: 0
+--- !u!114 &1659912173637664883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188720392616563506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d839ae7a6ed9489404bc5ce76781e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCHealth: {fileID: 3188720392616563662}
+  NPCHunger: {fileID: 3188720392616563663}
+  traits: {fileID: 3188720392616563657}
+  skills: {fileID: 3188720392616563659}
+  zombie: {fileID: 3276602710801188593, guid: 788edb4d52e9f454fb74648f0cbade17, type: 3}

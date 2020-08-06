@@ -175,7 +175,7 @@ MonoBehaviour:
   isDead: 0
   characterLayers:
     serializedVersion: 2
-    m_Bits: 10240
+    m_Bits: 108544
   attackRange: 1
   damage: 5
   attackOffset: {x: 0, y: 0, z: 0}
@@ -233,6 +233,7 @@ MonoBehaviour:
   recoverySpeed: 0.05000000074505806
   damageResistance: 1
   isDead: 0
+  zombieChance: 0
 --- !u!114 &985186225591016176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +248,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCHealth: {fileID: 985186225591016177}
   NPCHunger: {fileID: 985186225591016190}
+  traits: {fileID: 985186225591016169}
+  skills: {fileID: 985186225591016182}
+  zombie: {fileID: 3276602710801188593, guid: 788edb4d52e9f454fb74648f0cbade17, type: 3}
 --- !u!61 &985186225591016179
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -20,6 +20,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (action.isDead)
+        {
+            return;
+        }
         cnt -= 1;
         if (action.distance <= action.attackRange)
         {
