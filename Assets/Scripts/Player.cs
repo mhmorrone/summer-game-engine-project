@@ -143,22 +143,19 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("You died!");
+        trans.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        animator.SetBool("IsDead", true);
         playerHealth.isDead = true;
         playerMovement.enable = false;
         if (GetComponent<Health>().zombieChance > UnityEngine.Random.Range(5, 100))
         {
-            for (int i = 200; i > GetComponent<Health>().zombieChance; i--)
-            {
-                //Wait an amount of time inversely proportional to the number of times character was attacked by a zombie to become a zombie
-            }
-            Zombieify();
+            animator.SetBool("Zombie", true);
         }
     }
 
-    public void Zombieify()
+    /*public void Zombieify()
     {
         Instantiate(zombie, playerHunger.GetComponent<Transform>().position, playerHunger.GetComponent<Transform>().rotation);
         Destroy(gameObject);
-    }
+    }*/
 }
