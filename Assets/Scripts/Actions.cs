@@ -45,11 +45,14 @@ public class Actions : MonoBehaviour
         distance = temp = 1000;
         foreach (Collider2D enemy in enemies)
         {
-            temp = Vector2.Distance(enemy.transform.position, trans.position);
-            if(temp < distance)
+            if (!enemy.GetComponent<Health>().isDead)
             {
-                distance = temp;
-                character = enemy.transform;
+                temp = Vector2.Distance(enemy.transform.position, trans.position);
+                if (temp < distance)
+                {
+                    distance = temp;
+                    character = enemy.transform;
+                }
             }
         }
         trans.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
@@ -115,7 +118,7 @@ public class Actions : MonoBehaviour
             character.GetComponent<Health>().TakeDamage(damage);
             if (isZombie)
             {
-                character.GetComponent<Health>().zombieChance += 1;
+                character.GetComponent<Health>().zombieChance += 2;
             }
         }
     }

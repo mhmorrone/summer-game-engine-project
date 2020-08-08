@@ -43,25 +43,23 @@ public class NPC : MonoBehaviour
     //Kill character
     public void Die()
     {
+        GetComponent<Animator>().SetBool("IsDead", true);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         GetComponent<Actions>().isDead = true;
         GetComponent<NPCWalking>().isDead = true;
         GetComponent<Health>().isDead = true;
-        if (GetComponent<Health>().zombieChance > UnityEngine.Random.Range(5, 105))
+        if (GetComponent<Health>().zombieChance > UnityEngine.Random.Range(5, 75))
         {
-            for(int i = 200; i > GetComponent<Health>().zombieChance; i--)
-            {
-                //Wait an amount of time inversely proportional to the number of times character was attacked by a zombie to become a zombie
-            }
-            Zombieify();
+            GetComponent<Animator>().SetBool("Zombie", true);
         }
 
     }
 
-    public void Zombieify()
+    /*public void Zombieify()
     {
         Instantiate(zombie, NPCHunger.GetComponent<Transform>().position, NPCHunger.GetComponent<Transform>().rotation);
         Destroy(gameObject);
-    }
+    }*/
 }
