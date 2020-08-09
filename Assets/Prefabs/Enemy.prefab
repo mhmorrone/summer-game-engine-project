@@ -251,7 +251,7 @@ MonoBehaviour:
   NPCHunger: {fileID: 3610150213411983374}
   traits: {fileID: 3610150213411983373}
   skills: {fileID: 3610150213411983410}
-  zombie: {fileID: 3276602710801188593, guid: 788edb4d52e9f454fb74648f0cbade17, type: 3}
+  zombie: {fileID: 8221422451354406964, guid: 92a16b4c1b858bd459990422a13e8d04, type: 3}
 --- !u!61 &3610150213411983371
 BoxCollider2D:
   m_ObjectHideFlags: 0
