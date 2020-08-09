@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
     public PlayerMovement playerMovement;
     public Health playerHealth;
     public Hunger playerHunger;
-    public Text textbox;
-    public Text textbox2;
+    //public Text textbox;
+    //public Text textbox2;
     public Image weapon;
     public Image gear;
     public Image hold;
@@ -33,8 +33,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         inv = GetComponent<Inventory>();
-        textbox = GameObject.FindGameObjectWithTag("Hunger").GetComponent<Text>();
-        textbox2 = GameObject.FindGameObjectWithTag("Health").GetComponent<Text>();
+        //textbox = GameObject.FindGameObjectWithTag("Hunger").GetComponent<Text>();
+        //textbox2 = GameObject.FindGameObjectWithTag("Health").GetComponent<Text>();
         weapon = GameObject.FindGameObjectWithTag("Weapon").GetComponent<Image>();
         gear = GameObject.FindGameObjectWithTag("Gear").GetComponent<Image>();
         hold = GameObject.FindGameObjectWithTag("Hold").GetComponent<Image>();
@@ -104,8 +104,8 @@ public class Player : MonoBehaviour
         }
 
        // Debug.Log("Changing weapon sprite to: " + inv.weapon.title);
-        textbox.text = "Hunger: " + playerHunger.currentHunger;
-        textbox2.text = "Health: " + playerHealth.currentHealth;
+        //textbox.text = "Hunger: " + playerHunger.currentHunger;
+        //textbox2.text = "Health: " + playerHealth.currentHealth;
 
         if (playerHunger.currentHunger == 0)
         {
