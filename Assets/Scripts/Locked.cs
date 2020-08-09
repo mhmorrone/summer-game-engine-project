@@ -16,13 +16,9 @@ public class Locked : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             Collider2D[] players = Physics2D.OverlapCircleAll(trans.position, range, playerLayers);
-            if (players != null)
+            if (players != null && players.Length > 0 && (players[0].transform.position - trans.position).magnitude < range)
             {
-                if ((players[0].transform.position - trans.position).magnitude < range)
-                {
-                    isLocked = !isLocked;
-                }
-                
+                isLocked = !isLocked;
             }
 
         }

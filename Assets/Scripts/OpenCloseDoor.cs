@@ -27,23 +27,19 @@ namespace UnityEngine.Experimental.Rendering.Universal
                 if (!locked.isLocked)
                 {
                     Collider2D[] players = Physics2D.OverlapCircleAll(trans.position, range, playerLayers);
-                    if (players != null)
+                    if (players != null && players.Length > 0 && (players[0].transform.position - trans.position).magnitude < range)
                     {
-                        if ((players[0].transform.position - trans.position).magnitude < range)
+                        timer = 1f;
+                        open = !open;
+                        if (open)
                         {
-                            timer = 1f;
-                            open = !open;
-                            if (open)
-                            {
-                                trans.RotateAround(DoorHinge.transform.position, Vector3.forward, -90);
-                                light.turnLightOn();
-                            }
-                            else
-                            {
-                                trans.RotateAround(DoorHinge.transform.position, Vector3.forward, 90);
-                            }
+                            trans.RotateAround(DoorHinge.transform.position, Vector3.forward, -90);
+                            light.turnLightOn();
                         }
-                        
+                        else
+                        {
+                            trans.RotateAround(DoorHinge.transform.position, Vector3.forward, 90);
+                        }
                     }
 
                 }
