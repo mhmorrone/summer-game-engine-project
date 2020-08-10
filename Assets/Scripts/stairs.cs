@@ -19,9 +19,7 @@ public class stairs : MonoBehaviour
      */
     void OnTriggerEnter2D(Collider2D col)
     {
-        /*Vector3 pos = col.gameObject.transform.position;
-        col.gameObject.transform.position = new Vector3(pos.x + 10, pos.y + distance, pos.z);
-        distance = -distance;*/
+        //character or object is transported to the connected stairs landing of the other floor when they enter the stairs
         col.gameObject.transform.Translate(StairsLanding.transform.position - col.gameObject.transform.position);
     }
 }

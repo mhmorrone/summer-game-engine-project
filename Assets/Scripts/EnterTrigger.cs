@@ -11,6 +11,7 @@ namespace UnityEngine.Experimental.Rendering.Universal
         public LightInsideBuilding light;
         void OnTriggerEnter2D ()
         {
+            //Turns light on in the building when something enters the room
             light.turnLightOn();
         }
     }

@@ -10,11 +10,11 @@ public class Death : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (animator.GetBool("Zombie"))
+        if (animator.GetBool("Zombie")) //if character is going to become a zombie, count is set to turn character into a zombie after 200 updates
         {
             count = animator.GetComponent<Health>().zombieChance + 200;
         }
-        else
+        else //count is set to below 0 otherwise and they stay dead
         {
             count = -1;
         }
@@ -24,12 +24,14 @@ public class Death : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if(animator.GetComponent<Health>().zombieChance == count)
-           Zombieify(animator);
+           Zombieify(animator); //character becomes a zombie after 200 updates if they are supposed to
         count--;
     }
 
     public void Zombieify(Animator animator)
-    {
+    { 
+        //Character turns into a zombie
+        //a zombie (of the same look as the character) spawns where the character is and the character is destroyed
         Instantiate(zombie, animator.GetComponent<Transform>().position, animator.GetComponent<Transform>().rotation);
         Destroy(animator.gameObject);
     }

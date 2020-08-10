@@ -20,6 +20,7 @@ public class Enemy_Follow : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //uses state machine to determine when to follow a character
         animator.GetComponent<Actions>().Follow();
     }
 

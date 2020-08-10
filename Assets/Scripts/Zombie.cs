@@ -22,6 +22,10 @@ public class Zombie : MonoBehaviour
             return;
         }
         cnt -= 1;
+        /* 
+         * If within attacking range to a character, zombie attacks that character using fight and they eat
+         * Otherwise, they follow the closest character who is alive
+         */
         if (action.distance <= action.attackRange)
         {
             action.follow = false;

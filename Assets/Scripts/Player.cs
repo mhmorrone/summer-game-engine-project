@@ -35,8 +35,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         inv = GetComponent<Inventory>();
-        //textbox = GameObject.FindGameObjectWithTag("Hunger").GetComponent<Text>();
-        //textbox2 = GameObject.FindGameObjectWithTag("Health").GetComponent<Text>();
         weapon = GameObject.FindGameObjectWithTag("Weapon").GetComponent<Image>();
         gear = GameObject.FindGameObjectWithTag("Gear").GetComponent<Image>();
         hold = GameObject.FindGameObjectWithTag("Hold").GetComponent<Image>();
@@ -58,6 +56,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
+        //update inventory items
         if (inv.weapon != null)
         {
             weapon.sprite = inv.weapon.icon;
@@ -107,10 +106,7 @@ public class Player : MonoBehaviour
             backpackX.interactable = false;
         }
 
-       // Debug.Log("Changing weapon sprite to: " + inv.weapon.title);
-        //textbox.text = "Hunger: " + playerHunger.currentHunger;
-        //textbox2.text = "Health: " + playerHealth.currentHealth;
-
+        //decrease health if player is starving and decrease hunger if player is not starving yet
         if (playerHunger.currentHunger == 0)
         {
             playerHealth.currentHealth -= 0.1 * Time.fixedDeltaTime;
@@ -121,26 +117,25 @@ public class Player : MonoBehaviour
             playerHunger.currentHunger -= playerHunger.StarvationSpeed * Time.fixedDeltaTime;
         }
 
-        //Debug.Log("Hunger is " + playerHunger.currentHunger);
-        // Debug.Log("Health is " + playerHealth.currentHealth);
-
         // Health Bar Update
         healthBar.setHealth(playerHealth.currentHealth);
 
-
+        //player dies if health reaches 0
         if (playerHealth.currentHealth <= 0)
         {
             Die();
         }
+        //player attacks if the spacebar is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            UnityEngine.Debug.Log("Attack!");
+            //UnityEngine.Debug.Log("Attack!");
             Attack();
         }
     }
 
     void Attack()
     {
+        //Player attacks nearby characters and those characters take damage
         SoundManagerScript.PlaySound("hit");
         animator.SetTrigger("Attack");
         Collider2D[] hitCharacters = Physics2D.OverlapCircleAll(trans.position, attackRange, NPCLayers);
@@ -152,6 +147,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        //player dies - movement and collision scripts are deactivated and animation is set
         SoundManagerScript.PlaySound("death");
         trans.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         animator.SetBool("IsDead", true);
@@ -159,13 +155,8 @@ public class Player : MonoBehaviour
         playerMovement.enable = false;
         if (GetComponent<Health>().zombieChance > UnityEngine.Random.Range(5, 100))
         {
+            //Based on number of zombie attacks, it is possible that the player can become a zombie
             animator.SetBool("Zombie", true);
         }
     }
-
-    /*public void Zombieify()
-    {
-        Instantiate(zombie, playerHunger.GetComponent<Transform>().position, playerHunger.GetComponent<Transform>().rotation);
-        Destroy(gameObject);
-    }*/
 }

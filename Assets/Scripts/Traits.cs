@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Traits : MonoBehaviour
 {
+    //A script to put and assign character traits for an NPC
     // Start is called before the first frame update
     void Start()
     {

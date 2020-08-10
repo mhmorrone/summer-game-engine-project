@@ -7,6 +7,7 @@ public class Enemy_Fight : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //Uses state machine to determine when NPCs should fight
         animator.GetComponent<Actions>().Fight();
         animator.GetComponent<NPCWalking>().enable = false;
     }

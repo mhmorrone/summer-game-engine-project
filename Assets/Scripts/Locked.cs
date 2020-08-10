@@ -15,6 +15,7 @@ public class Locked : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
+            //door is locked or unlocked when L key is pressed when player is close to the door
             Collider2D[] players = Physics2D.OverlapCircleAll(trans.position, range, playerLayers);
             if (players != null && players.Length > 0 && (players[0].transform.position - trans.position).magnitude < range)
             {
@@ -22,7 +23,6 @@ public class Locked : MonoBehaviour
             }
 
         }
-        isLocked = !isLocked;
 
     }
 }

@@ -10,18 +10,18 @@ using UnityEngine;
 public class Actions : MonoBehaviour
 {
     public bool follow = true;
-    public Transform trans;
+    public Transform trans; //NPC transform
     public NPCWalking walkScript;
     public bool isDead = false;
-    public LayerMask characterLayers;
-    public float attackRange = 5f;
+    public LayerMask characterLayers; //layers that the NPC can attack.
+    public float attackRange = 1f;
     public int damage = 5;
     public Vector3 attackOffset;
     public Animator animator;
     Transform character;
     Rigidbody2D rb;
     int counter;
-    public float distance;
+    public float distance; //distance to closest character it can attack. Used for following functions and such
     Vector2 target;
     public Vector2 newPos;
     Collider2D[] enemies;
@@ -41,6 +41,7 @@ public class Actions : MonoBehaviour
         {
             return;
         }
+        //Calculates distance to closest character it can attack and stores the distance and which character it is
         enemies = Physics2D.OverlapCircleAll(trans.position, 100, characterLayers);
         distance = temp = 1000;
         foreach (Collider2D enemy in enemies)
@@ -55,19 +56,22 @@ public class Actions : MonoBehaviour
                 }
             }
         }
+        //Sets velocity to 0 each update so that other characters cannot push the NPC very far and unrealistically
         trans.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-        //trans.GetComponent<Rigidbody2D>().velocity.y = 0;
-        counter -= 1;
+        
+        counter -= 1; //counter for the follow function
         if (!isDead)
         {            
             animator.SetFloat("Distance", distance);
             if(follow && distance < 1000 && character != null)
             {
+                //follow a specific character
                 walkScript.enable = false;
                 Follow(character);
             }
             else
             {
+                //if NPC is not following a character, they move randomly instead
                 walkScript.enable = true;
             }
             
@@ -83,7 +87,7 @@ public class Actions : MonoBehaviour
         
     }
 
-    //Follow player - activate when part of the group for the player
+    //Follow a specified character
     public void Follow(Transform point = null)
     {
         if(point == null)
@@ -92,22 +96,23 @@ public class Actions : MonoBehaviour
         }
         if(counter <= 0)
         {
-            counter = 10;
-            //target = new Vector2(player.transform.position.x + UnityEngine.Random.Range(-1f, 1f), player.transform.position.y + UnityEngine.Random.Range(-5f, 5f));
+            counter = 10; //target only changes every 10 updates so that the NPC does not look like it is glitching due to the rapidly changing animations
             target = new Vector2(point.position.x, point.position.y);
             animator.SetFloat("Vertical", (target.y - trans.position.y) * 100);
             animator.SetFloat("Horizontal", (target.x - trans.position.x) * 100);
         }
+        //NPC moves closer to target each update
         newPos = Vector2.MoveTowards(trans.position, target, walkScript.moveSpeed * Time.fixedDeltaTime);
         animator.SetFloat("IsWalking", 1);
         trans.GetComponent<Rigidbody2D>().MovePosition(newPos);
     }
 
-    //Fight
+    //Fight - NPC attacks whoever is within range
     public void Fight(bool isZombie = false)
     {
         follow = false;
-        animator.SetFloat("IsWalking", 0);
+        animator.SetFloat("IsWalking", 0);//NPC should not be walking
+        //Offset the attack slightly for better results
         Vector3 pos = trans.position;
         pos.x += distance * 0.5f * walkScript.movement.x/Math.Abs(walkScript.movement.x);
         pos.y += distance * 0.5f * walkScript.movement.y / Math.Abs(walkScript.movement.y);
@@ -115,15 +120,17 @@ public class Actions : MonoBehaviour
         Collider2D[] hitCharacters = Physics2D.OverlapCircleAll(trans.position, attackRange, characterLayers);
         foreach(Collider2D character in hitCharacters)
         {
+            //have each hit character that is able to take attacks from the NPC take damage
             character.GetComponent<Health>().TakeDamage(damage);
             if (isZombie)
             {
-                character.GetComponent<Health>().zombieChance += 2;
+                //if the NPC is a zombie, the hit character's chance of becoming a zombie increases
+                character.GetComponent<Health>().zombieChance += 2; 
             }
         }
     }
 
-    //Run away
+    //Run away - a possible result of being hit
     public void Flight()
     {
         walkScript.enable = true;
@@ -132,7 +139,7 @@ public class Actions : MonoBehaviour
         //walkScript.moveSpeed *= 2;
     }
 
-    //NPC stands still
+    //NPC stands still - a possible result of being hit
     public void Freeze()
     {
         walkScript.enable = true;
@@ -142,6 +149,7 @@ public class Actions : MonoBehaviour
 
 
     //Move NPC to certain place
+    //It currently is not used anywhere, but could be useful in future methods in combination with player ordering NPCs in their group to do certain tasks
     public void Move(Transform point)
     {
         //Makes use of the Follow Function to move the NPC to a certain spot instead of towards the player

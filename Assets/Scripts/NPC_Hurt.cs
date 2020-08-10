@@ -11,7 +11,7 @@ public class NPC_Hurt : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        FightFlightFreeze = UnityEngine.Random.Range(-1, 1);
+        FightFlightFreeze = UnityEngine.Random.Range(-1, 1); //randomly determines if NPC will fight, run away, or freeze when hurt
         action = animator.GetComponent<Actions>();
     }
 
@@ -24,6 +24,7 @@ public class NPC_Hurt : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //After being hurt, NPC will either attack, run away, or freeze depending on earlier random result
         if(FightFlightFreeze == -1)
         {
             animator.SetTrigger("Attack");

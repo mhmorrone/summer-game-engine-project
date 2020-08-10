@@ -11,17 +11,20 @@ public class Hunger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //current hunger is set to max hunger, showing the character is full
         currentHunger = maxHunger;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        //hunger is decreased each update, getting closer to starvation
         currentHunger -= StarvationSpeed * Time.fixedDeltaTime;
     }
 
     public void Eat(int foodVal)
     {
+        //the character eats, increasing current hunger value, showing the character is less hungry
         currentHunger += foodVal;
     }
 }

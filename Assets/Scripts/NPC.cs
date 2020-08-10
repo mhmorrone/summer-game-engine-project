@@ -11,7 +11,7 @@ public class NPC : MonoBehaviour
     public Traits traits;
     public Skills skills;
     public GameObject zombie;
-    //public GameObject npc;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +21,7 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //health decreases when starving and hunger decreases each update when not starving
         if (NPCHunger.currentHunger == 0)
         {
             NPCHealth.currentHealth -= 0.1 * Time.fixedDeltaTime;
@@ -31,16 +32,14 @@ public class NPC : MonoBehaviour
             NPCHunger.currentHunger -= NPCHunger.StarvationSpeed * Time.fixedDeltaTime;
         }
 
-        //Debug.Log("Hunger is " + playerHunger.currentHunger);
-        // Debug.Log("Health is " + playerHealth.currentHealth);
-
+        //if Health reaches 0, NPC dies
         if (NPCHealth.currentHealth <= 0)
         {
             Die();
         }
     }
 
-    //Kill character
+    //Kill character - various scripts are unenabled to prevent movement, collisions, damage, etc
     public void Die()
     {
         GetComponent<Animator>().SetBool("IsDead", true);
@@ -52,14 +51,11 @@ public class NPC : MonoBehaviour
         GetComponent<Health>().isDead = true;
         if (GetComponent<Health>().zombieChance > UnityEngine.Random.Range(5, 75))
         {
+            //turns into a zombie depending on number of zombie attacks and chance
             GetComponent<Animator>().SetBool("Zombie", true);
         }
 
     }
 
-    /*public void Zombieify()
-    {
-        Instantiate(zombie, NPCHunger.GetComponent<Transform>().position, NPCHunger.GetComponent<Transform>().rotation);
-        Destroy(gameObject);
-    }*/
+    
 }

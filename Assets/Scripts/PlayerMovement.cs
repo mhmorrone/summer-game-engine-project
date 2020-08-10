@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public CharacterController controller;
     public Rigidbody2D rb;
     public float movespeed = 5f;
     Vector2 movement;
@@ -16,12 +15,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!enable)
+        if (!enable) // disabled when dead
         {
             return;
         }
+        //receives input from arrow key or aswd keys
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        //sets animator parameters based on input so that animation reflects movement
         animator.SetFloat("Speed", movement.sqrMagnitude);
         if(movement.sqrMagnitude != 0)
         {
@@ -34,8 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Move character
-        //controller.Move(movement.x * movespeed * Time.fixedDeltaTime, movement.y * movespeed * Time.fixedDeltaTime);
+        //Move character based on input
         rb.MovePosition(rb.position + movement * movespeed * Time.fixedDeltaTime);
     }
 }

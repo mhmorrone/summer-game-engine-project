@@ -16,6 +16,7 @@ namespace UnityEngine.Experimental.Rendering.Universal
         
         void Start()
         {
+            //Lights in building start turned off by default so the inside of buildings cannot be seen
             lightOn = false;
             light.intensity = 0f;
             timer = 0.1f;
@@ -27,20 +28,20 @@ namespace UnityEngine.Experimental.Rendering.Universal
             timer -= Time.deltaTime;
             if(timer > 0f)
             {
-                lightOn = false;
+                lightOn = false;//Prevents lights from turning on at the beginning of the game for the most part due to objects being in the room at the start of the game
             }
             if (lightOn)
             {
-                light.intensity = lightIntensity;
+                light.intensity = lightIntensity;//Light turns on when lightOn is changed to true
             } else
             {
-                light.intensity = 0f;
+                light.intensity = 0f;//Otherwise, lights stay off
             }
         }
 
         public void turnLightOn()
         {
-            Debug.Log("Turn light on");
+            //turns the light on by changing lightOn to being true
             lightOn = true;
         }
     }

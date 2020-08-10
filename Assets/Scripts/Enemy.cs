@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if not dead, enemy will fight if close enough to a character it can attack
+        //otherwise, they will follow the closest character they can attack
         if (action.isDead)
         {
             return;
@@ -29,7 +31,7 @@ public class Enemy : MonoBehaviour
         {
             action.follow = false;
             action.animator.SetFloat("IsWalking", 0);
-            if (cnt <= 0)
+            if (cnt <= 0) //enemy can only attack every 25 updates
             {
                 action.animator.SetTrigger("Attack");
                 //action.Fight();
@@ -38,13 +40,6 @@ public class Enemy : MonoBehaviour
         }
         else
             action.follow = true;
-        /*if ((player.transform.position - trans.position).magnitude < 3f)
-        {
-            //if (UnityEngine.Random.Range(0, 1) == 1)
-            //{
-                GetComponent<Actions>().Fight();
-                UnityEngine.Debug.Log("Fight!");
-            //}
-        }*/
+        
     }
 }

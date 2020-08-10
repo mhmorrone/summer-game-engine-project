@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 
 public class Skills : MonoBehaviour
 {
-   /* public int mentalHealth;
+   //skill set for NPCs
+    /* public int mentalHealth;
     public int physicalHealth;
     //public int[] health = { mentalHealth, physicalHealth };
     public int inventing;
@@ -28,6 +30,8 @@ public class Skills : MonoBehaviour
     {
         for (int i = 0; i < 8; i++)
         {
+            //randomly assign skill set values
+            //It should be much less likely for skil values to be above 50. This needs to be coded into the mechanism
             skillSet[i] = UnityEngine.Random.Range(0, 100);
         }
     }
@@ -41,12 +45,14 @@ public class Skills : MonoBehaviour
     //Customize character's skills
     void Customization(Skill skill, int amount)
     {
+        //method to set a specific skill to a specified amount
         skillSet[(int)skill] = amount;
     }
 
     //increase skill value
     void Learn(Skill skill, int amount )
     {
+        //increase a skill value by a certain amount
         skillSet[(int)skill] += amount;
     }
 }

@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set current health to the max health level and set chance of becoming a zombie to 0
         currentHealth = maxHealth;
         zombieChance = 0;
     }
@@ -24,6 +25,7 @@ public class Health : MonoBehaviour
     {
         if (!isDead)
         {
+            //if the character is not dead, the character slowly gains health over time if under the max health level up to the max health level
             if (currentHealth < maxHealth)
                 currentHealth += recoverySpeed * Time.fixedDeltaTime;
             if (currentHealth > maxHealth)
@@ -36,12 +38,14 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        //character's health decreases by a certain amount and the hurt animation shows this
         currentHealth -= damage / damageResistance;
         GetComponent<Animator>().SetTrigger("Hurt");
     }
 
     public void Heal(int heal)
     {
+        //character gains a certain amount of health
         currentHealth += heal;
     }
 }
