@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public PlayerMovement playerMovement;
     public Health playerHealth;
     public Hunger playerHunger;
+    public HealthBar healthBar;
     //public Text textbox;
     //public Text textbox2;
     public Image weapon;
@@ -44,6 +45,8 @@ public class Player : MonoBehaviour
         gearX = GameObject.FindGameObjectWithTag("GearX").GetComponent<Button>();
         holdX = GameObject.FindGameObjectWithTag("HoldX").GetComponent<Button>();
         backpackX = GameObject.FindGameObjectWithTag("BackpackX").GetComponent<Button>();
+
+        healthBar.setMaxHealth(playerHealth.maxHealth);
 
     }
 
@@ -116,10 +119,10 @@ public class Player : MonoBehaviour
         {
             playerHunger.currentHunger -= playerHunger.StarvationSpeed * Time.fixedDeltaTime;
         }
-        
-        //Debug.Log("Hunger is " + playerHunger.currentHunger);
-       // Debug.Log("Health is " + playerHealth.currentHealth);
 
+        //Debug.Log("Hunger is " + playerHunger.currentHunger);
+        // Debug.Log("Health is " + playerHealth.currentHealth);
+        healthBar.setHealth(playerHealth.currentHealth);
         if (playerHealth.currentHealth <= 0)
         {
             Die();
