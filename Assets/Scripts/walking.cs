@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// written by Aidan Minnihan
+// Code is unused, as Aidan primarily went on to make art and work on researching. However, before that shift he created this basic walking script with
+//          admittedly buggy projectile mechanics.
+
 public class walking : MonoBehaviour
 {
     public float moveSpeed = 5f;
