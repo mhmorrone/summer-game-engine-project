@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public ItemDatabase itemDatabase;
+    public ItemDatabase itemDatabase; //Database to look up items
+    //Different slots for item types.
     public Item weapon; //0
     public Item gear;   //1
     public Item held;   //2
@@ -12,18 +13,19 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        GiveItem(0);
+        GiveItem(0); //Executed at start of game for testing purposes.
        // RemoveItem(0);
     }
-
+    
+    //Gives item of specified ID to player.
     public void GiveItem(int id)
     {
-        Item itemToAdd = itemDatabase.GetItem(id);
+        Item itemToAdd = itemDatabase.GetItem(id); //Lookup item in database.
         //characterItems.Add(itemToAdd);
-    	switch(itemToAdd.type){
+    	switch(itemToAdd.type){ //The type of the item affects which slot to palce it in.
 	    case 0:
-		if (weapon !=null) RemoveItem(weapon.id);
-		weapon = itemToAdd;
+		if (weapon !=null) RemoveItem(weapon.id); //We remove the item if the slot is occupied.
+		weapon = itemToAdd; //Put new item in proper slot.
                 break;
 	    case 1:
 		if (gear !=null) RemoveItem(gear.id);
@@ -41,19 +43,19 @@ public class Inventory : MonoBehaviour
 	Debug.Log("Gave item: " + itemToAdd.title + " which has a weight of " + itemToAdd.weight + " and a value of " + itemToAdd.value);
     }
 
-    public void drop(int id){
+    public void drop(int id){ //This is so the removed item drops to the floor, but it wasn't implemented.
 	//TODO
     }
 
     public void RemoveItem(int id)
     {
-        Item item = itemDatabase.GetItem(id);
+        Item item = itemDatabase.GetItem(id); //Makes sure the item being removed is valid.
         if (item != null)
         {
             switch (item.type)
             {
                 case 0:                   
-                    weapon = null;
+                    weapon = null; //Clears proper item slot.
                     break;
                 case 1:
                     gear = null;
@@ -66,11 +68,11 @@ public class Inventory : MonoBehaviour
                     break;
             }
             Debug.Log("Item removed from inventory: " + item.title);
-			drop(id);
+			drop(id);//Drop item.
         }
 
     }
-    public void removeWeapon()
+    public void removeWeapon() //Methods to remove specific slots, used for inventory GUI x button.
     {
         RemoveItem(weapon.id);
     }

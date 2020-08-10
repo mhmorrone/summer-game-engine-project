@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class ItemDatabase : MonoBehaviour
 {
-    public List<Item> items = new List<Item>();
+    public List<Item> items = new List<Item>(); //List of items in database
 
-    public void Awake()
+    public void Awake() //Calls build method
     {
         BuildDatabase();
     }
 
-    public Item GetItem(int id)
+    public Item GetItem(int id) //Returns item from database by ID
     {
         return items.Find(item => item.id == id);
     }
 
-    public Item GetItem(string itemName)
+    public Item GetItem(string itemName)//Returns item from database name
     {
         return items.Find(item => item.title == itemName);
     }
 
-    void BuildDatabase()
+    void BuildDatabase()//Makes actual database
     {
         // Item has the following members: int id, string title, string description, int type (0 = weapon, 1 = armor, 2 = hold item, 3 = backpack),
         // int weight, bool consumable, int value, int valueDictionary<string, int> stats 
