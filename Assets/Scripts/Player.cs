@@ -140,6 +140,7 @@ public class Player : MonoBehaviour
 
     void Attack()
     {
+        SoundManagerScript.PlaySound("hit");
         animator.SetTrigger("Attack");
         Collider2D[] hitCharacters = Physics2D.OverlapCircleAll(trans.position, attackRange, NPCLayers);
         foreach (Collider2D character in hitCharacters)
@@ -150,6 +151,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        SoundManagerScript.PlaySound("death");
         trans.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         animator.SetBool("IsDead", true);
         playerHealth.isDead = true;

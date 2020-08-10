@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
+	public AudioMixer audioMixer;
     public Button play;
     public Button options;
     public Button quit;
     public Slider volumeSlider;
     public Button back;
-
+	
+	
     void Start()
     {
         play.onClick.AddListener(MenuClick);
@@ -19,6 +22,7 @@ public class MainMenu : MonoBehaviour
         quit.onClick.AddListener(MenuClick);
         back.onClick.AddListener(MenuClick);
         volumeSlider.onValueChanged.AddListener(SliderChange);
+		audioMixer.SetFloat("volume", Mathf.Log10(1) * 20);
     }
 
     void MenuClick()

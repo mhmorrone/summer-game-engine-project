@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip menuSelect, menuSlide;
+    // All audio clips should be implemented here. Follow the format.
+    public static AudioClip menuSelect, menuSlide, hit, hurt, death;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -12,6 +13,9 @@ public class SoundManagerScript : MonoBehaviour
     {
         menuSelect = Resources.Load<AudioClip>("Sounds/menuSelect");
         menuSlide = Resources.Load<AudioClip>("Sounds/menuChange");
+        hit = Resources.Load<AudioClip>("Sounds/hit");
+        hurt = Resources.Load<AudioClip>("Sounds/hurt");
+        death = Resources.Load<AudioClip>("Sounds/death");
 
         audioSrc = GetComponent<AudioSource>();
         
@@ -31,6 +35,15 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "sliderSound":
                 audioSrc.PlayOneShot(menuSlide);
+                break;
+            case "hit":
+                audioSrc.PlayOneShot(hit);
+                break;
+            case "hurt":
+                audioSrc.PlayOneShot(hurt);
+                break;
+            case "death":
+                audioSrc.PlayOneShot(death);
                 break;
 
         }

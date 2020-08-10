@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Item
 {
-    public int id;
-    public string title;
-    public string description;
-    public Sprite icon;
-    public Dictionary<string, int> stats = new Dictionary<string, int>();
-    public int type;
-    public int weight;
-	public bool consumable;
-	public int value;
+    public int id; //Each item has a unique ID
+    public string title; //Name of the item
+    public string description; //Description of the item
+    public Sprite icon; //Icon to display item in inventory GUI
+    public Dictionary<string, int> stats = new Dictionary<string, int>(); //To store attribute values as required.
+    public int type; //0=weapon, 1=gear, 2=held, 3=bag;
+    public int weight;//For inventory limited to weight, not implemented
+	public bool consumable; //Item removed upon use
+	public int value; //Item worth
 	
+    //Constructor with all fields filled
     public Item(int id, string title, string description, int type, int weight, bool consumable, int value, Dictionary<string, int> stats)
     {
         this.id = id;
@@ -28,6 +29,7 @@ public class Item
 		
     }
 
+    //Copy constructor
     public Item(Item item)
     {
         this.id = item.id;
