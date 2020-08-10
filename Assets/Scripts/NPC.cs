@@ -23,7 +23,7 @@ public class NPC : MonoBehaviour
     {
         if (NPCHunger.currentHunger == 0)
         {
-            NPCHealth.currentHealth -= 0.1f * Time.fixedDeltaTime;
+            NPCHealth.currentHealth -= 0.1 * Time.fixedDeltaTime;
         }
 
         if (NPCHunger.currentHunger >= 0)

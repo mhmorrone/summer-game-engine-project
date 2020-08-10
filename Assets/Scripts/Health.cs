@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public double maxHealth = 100f;
+    public double maxHealth = 100;
     public double currentHealth;
-    public double recoverySpeed = 0.05f;
-    public double damageResistance = 1f;
+    public double recoverySpeed = 0.05;
+    public double damageResistance = 1;
     public bool isDead = false;
     public int zombieChance;
     

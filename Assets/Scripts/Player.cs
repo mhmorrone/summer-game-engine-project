@@ -29,7 +29,8 @@ public class Player : MonoBehaviour
     public Animator animator;
     public int damage;
     public GameObject zombie;
-    
+    //public SoundManagerScript soundManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -112,7 +113,7 @@ public class Player : MonoBehaviour
 
         if (playerHunger.currentHunger == 0)
         {
-            playerHealth.currentHealth -= 0.1f * Time.fixedDeltaTime;
+            playerHealth.currentHealth -= 0.1 * Time.fixedDeltaTime;
         }
 
         if (playerHunger.currentHunger >= 0)
