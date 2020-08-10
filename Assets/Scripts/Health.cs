@@ -11,14 +11,12 @@ public class Health : MonoBehaviour
     public double damageResistance = 1f;
     public bool isDead = false;
     public int zombieChance;
-    //public HealthBar healthBar;
     
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         zombieChance = 0;
-        //healthBar.setMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -39,13 +37,11 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage / damageResistance;
-        //healthBar.setHealth(currentHealth);
         GetComponent<Animator>().SetTrigger("Hurt");
     }
 
     public void Heal(int heal)
     {
         currentHealth += heal;
-        //healthBar.setHealth(currentHealth);
     }
 }

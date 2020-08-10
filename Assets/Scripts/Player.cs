@@ -122,7 +122,11 @@ public class Player : MonoBehaviour
 
         //Debug.Log("Hunger is " + playerHunger.currentHunger);
         // Debug.Log("Health is " + playerHealth.currentHealth);
+
+        // Health Bar Update
         healthBar.setHealth(playerHealth.currentHealth);
+
+
         if (playerHealth.currentHealth <= 0)
         {
             Die();
