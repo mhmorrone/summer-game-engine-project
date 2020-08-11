@@ -175,7 +175,7 @@ MonoBehaviour:
   isDead: 0
   characterLayers:
     serializedVersion: 2
-    m_Bits: 108544
+    m_Bits: 100352
   attackRange: 1
   damage: 5
   attackOffset: {x: 0, y: 0, z: 0}

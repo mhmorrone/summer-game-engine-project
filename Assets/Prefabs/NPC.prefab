@@ -244,14 +244,13 @@ MonoBehaviour:
   isDead: 0
   characterLayers:
     serializedVersion: 2
-    m_Bits: 10240
+    m_Bits: 100352
   attackRange: 1
   damage: 5
   attackOffset: {x: 0, y: 0, z: 0}
   animator: {fileID: 3188720392616563505}
   distance: 0
   newPos: {x: 0, y: 0}
-  zombieChance: 0
 --- !u!114 &3188720392616563662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +268,7 @@ MonoBehaviour:
   recoverySpeed: 0.05000000074505806
   damageResistance: 1
   isDead: 0
+  zombieChance: 0
 --- !u!114 &3188720392616563663
 MonoBehaviour:
   m_ObjectHideFlags: 0

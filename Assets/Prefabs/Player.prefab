@@ -232,8 +232,7 @@ MonoBehaviour:
   playerMovement: {fileID: 2213787526152074697}
   playerHealth: {fileID: 6262361689425817563}
   playerHunger: {fileID: 872906814770820099}
-  textbox: {fileID: 0}
-  textbox2: {fileID: 0}
+  healthBar: {fileID: 0}
   weapon: {fileID: 0}
   gear: {fileID: 0}
   hold: {fileID: 0}
@@ -247,7 +246,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 106496
   trans: {fileID: 2213787526152074699}
-  attackRange: 1
+  attackRange: 1.5
   animator: {fileID: 2213787526152074701}
   damage: 10
   zombie: {fileID: 3276602710801188593, guid: 788edb4d52e9f454fb74648f0cbade17, type: 3}

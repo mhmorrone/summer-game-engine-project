@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -554,7 +554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196753143}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 292.75623, y: -6.3172607, z: 0}
+  m_LocalPosition: {x: 263.8, y: -6.3172607, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1141263420}
@@ -2088,7 +2088,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690434398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.543793, y: -363.41724, z: 0}
+  m_LocalPosition: {x: -37.543793, y: -333.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1141263420}
@@ -2243,6 +2243,12 @@ RectTransform:
   m_AnchoredPosition: {x: 4.3296986, y: 3.3616054}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.50000006, y: 0.49925062}
+--- !u!1 &867372918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2213787526152074710, guid: 07ed57a136e2e624db22db633ec0a481,
+    type: 3}
+  m_PrefabInstance: {fileID: 2213787527347473112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &873468624
 GameObject:
   m_ObjectHideFlags: 0
@@ -3148,7 +3154,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2213787527347473112}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 867372918}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33d352a9c7e304a48b14176f72956119, type: 3}
@@ -10600,9 +10606,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7fd450782c9bd4a91493155a098452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 3
+  difficulty: 2
   zombie1: {fileID: 3276602710801188593, guid: 788edb4d52e9f454fb74648f0cbade17, type: 3}
   zombie2: {fileID: 8221422451354406964, guid: 92a16b4c1b858bd459990422a13e8d04, type: 3}
+  player: {fileID: 867372918}
   topBound: {fileID: 1966052692}
   bottomBound: {fileID: 690434403}
   rightBound: {fileID: 196753148}
@@ -10621,6 +10628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPC1: {fileID: 3188720392616563506, guid: a3ad54308f79b5145b0224f8c12e69b6, type: 3}
   NPC2: {fileID: 985186225591016170, guid: 4704f1bce6ade59499066d2a0bd69d74, type: 3}
+  player: {fileID: 0}
   topBound: {fileID: 1966052692}
   bottomBound: {fileID: 690434403}
   rightBound: {fileID: 196753148}
@@ -14169,7 +14177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898712960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -371.74377, y: -8.71727, z: 0}
+  m_LocalPosition: {x: -351.6, y: -8.71727, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1141263420}
@@ -14371,7 +14379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966052690}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.843788, y: 325.69275, z: 0}
+  m_LocalPosition: {x: -30.843788, y: 308.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1141263420}
