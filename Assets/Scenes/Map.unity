@@ -10606,7 +10606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7fd450782c9bd4a91493155a098452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 2
+  difficulty: 3
   zombie1: {fileID: 3276602710801188593, guid: 788edb4d52e9f454fb74648f0cbade17, type: 3}
   zombie2: {fileID: 8221422451354406964, guid: 92a16b4c1b858bd459990422a13e8d04, type: 3}
   player: {fileID: 867372918}
